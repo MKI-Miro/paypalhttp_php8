@@ -12,27 +12,15 @@ namespace PayPalHttp;
  */
 class HttpRequest
 {
-    /**
-     * @var string
-     */
-    public $path;
+    public string $path;
 
-    /**
-     * @var array | string
-     */
-    public $body;
+    public array | string $body;
 
-    /**
-     * @var string
-     */
-    public $verb;
+    public string $verb;
 
-    /**
-     * @var array
-     */
-    public $headers;
+    public  array$headers;
 
-    function __construct($path, $verb)
+    function __construct(string $path, string $verb)
     {
         $this->path = $path;
         $this->verb = $verb;

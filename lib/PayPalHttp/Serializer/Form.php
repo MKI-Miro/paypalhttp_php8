@@ -10,7 +10,7 @@ class Form implements Serializer
     /**
      * @return string Regex that matches the content type it supports.
      */
-    public function contentType()
+    public function contentType(): string
     {
         return "/^application\/x-www-form-urlencoded$/";
     }
@@ -19,7 +19,7 @@ class Form implements Serializer
      * @param HttpRequest $request
      * @return string representation of your data after being serialized.
      */
-    public function encode(HttpRequest $request)
+    public function encode(HttpRequest $request): string
     {
         if (!is_array($request->body) || !$this->isAssociative($request->body))
         {
@@ -34,7 +34,7 @@ class Form implements Serializer
      * @return mixed
      * @throws \Exception as multipart does not support deserialization.
      */
-    public function decode($body)
+    public function decode($body): mixed
     {
         throw new \Exception("CurlSupported does not support deserialization");
     }

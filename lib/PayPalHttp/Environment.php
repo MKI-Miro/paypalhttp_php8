@@ -11,8 +11,5 @@ namespace PayPalHttp;
  */
 interface Environment
 {
-    /**
-     * @return string
-     */
-    public function baseUrl();
+    public function baseUrl(): string;
 }

@@ -13,17 +13,17 @@ interface Serializer
     /**
      * @return string Regex that matches the content type it supports.
      */
-    public function contentType();
+    public function contentType(): string;
 
     /**
      * @param HttpRequest $request
      * @return string representation of your data after being serialized.
      */
-    public function encode(HttpRequest $request);
+    public function encode(HttpRequest $request): string;
 
     /**
      * @param $body
      * @return mixed object/string representing the de-serialized response body.
      */
-    public function decode($body);
+    public function decode($body): mixed;
 }

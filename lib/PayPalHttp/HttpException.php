@@ -4,22 +4,11 @@ namespace PayPalHttp;
 
 class HttpException extends IOException
 {
-    /**
-     * @var int
-     */
-    public $statusCode;
+    public int $statusCode;
 
-    /**
-     * @var array
-     */
-    public $headers;
+    public array $headers;
 
-    /**
-     * @param string $message
-     * @param int $statusCode
-     * @param array $headers
-     */
-    public function __construct($message, $statusCode, $headers)
+    public function __construct(string $message, int $statusCode, array $headers)
     {
         parent::__construct($message);
         $this->statusCode = $statusCode;

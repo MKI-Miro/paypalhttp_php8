@@ -10,20 +10,14 @@ namespace PayPalHttp;
  */
 class HttpClient
 {
-    /**
-     * @var Environment
-     */
-    public $environment;
+    public Environment $environment;
 
     /**
      * @var Injector[]
      */
     public $injectors = [];
 
-    /**
-     * @var Encoder
-     */
-    public $encoder;
+    public Encoder $encoder;
 
     /**
      * HttpClient constructor. Pass the environment you wish to make calls to.
@@ -58,7 +52,7 @@ class HttpClient
      * @throws HttpException
      * @throws IOException
      */
-    public function execute(HttpRequest $httpRequest)
+    public function execute(HttpRequest $httpRequest): HttpResponse
     {
         $requestCpy = clone $httpRequest;
         $curl = new Curl();

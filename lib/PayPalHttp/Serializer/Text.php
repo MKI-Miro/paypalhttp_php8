@@ -14,12 +14,12 @@ use PayPalHttp\Serializer;
 class Text implements Serializer
 {
 
-    public function contentType()
+    public function contentType(): string
     {
         return "/^text\\/.*/";
     }
 
-    public function encode(HttpRequest $request)
+    public function encode(HttpRequest $request): string
     {
         $body = $request->body;
         if (is_string($body)) {
@@ -31,7 +31,7 @@ class Text implements Serializer
         return implode(" ", $body);
     }
 
-    public function decode($data)
+    public function decode($data): mixed
     {
         return $data;
     }

@@ -25,8 +25,6 @@ class Encoder
         $this->serializers[] = new Form();
     }
 
-
-
     public function serializeRequest(HttpRequest $request)
     {
         if (!array_key_exists('content-type', $request->headers)) {
@@ -58,7 +56,6 @@ class Encoder
         }
         return $serialized;
     }
-
 
     public function deserializeResponse($responseBody, $headers)
     {

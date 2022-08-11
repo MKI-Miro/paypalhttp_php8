@@ -2,6 +2,8 @@
 
 namespace PayPalHttp;
 
+use PayPalHttp\Dto\ResponseResultDto;
+
 /**
  * Class HttpResponse
  * @package PayPalHttp
@@ -10,20 +12,11 @@ namespace PayPalHttp;
  */
 class HttpResponse
 {
-    /**
-     * @var int
-     */
-    public $statusCode;
+    public int $statusCode;
 
-    /**
-     * @var array | string | object
-     */
-    public $result;
+    public  array | string | ResponseResultDto $result;
 
-    /**
-     * @var array
-     */
-    public $headers;
+    public array $headers;
 
     public function __construct($statusCode, $body, $headers)
     {
